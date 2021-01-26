@@ -1,0 +1,72 @@
+
+users
+ - id int(11) K
+ - email varchar(191)
+ - password varchar(191)
+ - authkey varchar(40)
+ - role_id int(11) FK
+ - individual_id int(11) FK
+
+individuals
+ - id tinyint(11) K
+ - first_name varchar(191)
+ - last_name varchar(191)
+ - email varchar(191)
+ - position text
+
+alignments
+ - id int(11) K
+ - individual_id int(11) FK
+ - organisation_id int(11) FK
+ - type varchar(191) DEFAULT 'member'
+
+alignment_tags
+ - id int(11) K
+ - alignment_id int(11) FK
+
+organisations
+ - id int(11) K
+ - uuid varchar(40)
+ - name varchar(191)
+ - url varchar(191)
+ - nationality varchar(191)
+ - sector varchar(191)
+ - type varchar(191)
+ - contacts text
+
+keys
+ - id int(11) K
+ - uuid varchar(40)
+ - type varchar(191)
+ - key text
+ - revoked int(1)
+ - expires datetime
+
+user_keys
+ - id int(11) K
+ - user_id int(11) FK
+ - key_id int(11) FK
+
+organisation_keys
+ - id int(11) K
+ - org_id ing(11) FK
+ - key_id ing(11) FK
+
+broods
+ - id int(11) K
+ - uuid  varchar(40)
+ - url text
+ - org_id int(11) FK
+ - name varchar(191)
+ - description text
+ - trusted tinyint(1)
+ - pull in(1)
+ - apikey varchar(40)
+
+roles
+ - id int(11) K
+ - name varchar(191)
+ - default tinyint(1)
+ - perm_... tinyint(1)
+ - perm_... tinyint(1)
+
