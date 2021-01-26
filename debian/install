@@ -1,0 +1,10 @@
+#! /usr/bin/dh-exec
+libraries /usr/share/php-cerebrate
+src /usr/share/php-cerebrate
+templates /usr/share/php-cerebrate
+vendor /usr/share/php-cerebrate
+webroot /usr/share/php-cerebrate
+config /usr/share/php-cerebrate
+debian/php-cerebrate.conf /etc/apache2/conf-available/
+debian/config.php /etc/cerebrate/
+INSTALL/mysql.sql => /usr/share/dbconfig-common/data/php-cerebrate/install/mysql
